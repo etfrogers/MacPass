@@ -254,6 +254,13 @@
 		6021FE8218E160BC00C3BC51 /* PasswordEditWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6021FE8418E160BC00C3BC51 /* PasswordEditWindow.xib */; };
 		6021FE8D18E1617300C3BC51 /* PasswordCreatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6021FE8F18E1617300C3BC51 /* PasswordCreatorView.xib */; };
 		6021FE9818E1650F00C3BC51 /* DatabaseSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6021FE9A18E1650F00C3BC51 /* DatabaseSettingsWindow.xib */; };
+		CEECAEA71E9132A3005E7AE5 /* DBMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CEECAE9D1E9132A3005E7AE5 /* DBMatcher.m */; };
+		CEECAEA91E9132A3005E7AE5 /* DBScorer.m in Sources */ = {isa = PBXBuildFile; fileRef = CEECAEA11E9132A3005E7AE5 /* DBScorer.m */; };
+		CEECAEAA1E9132A3005E7AE5 /* DBZxcvbn.m in Sources */ = {isa = PBXBuildFile; fileRef = CEECAEA31E9132A3005E7AE5 /* DBZxcvbn.m */; };
+		CEECAEAB1E9132A3005E7AE5 /* generated in Resources */ = {isa = PBXBuildFile; fileRef = CEECAEA41E9132A3005E7AE5 /* generated */; };
+		CEECAEAC1E9132A3005E7AE5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEECAEA51E9132A3005E7AE5 /* Info.plist */; };
+		CEECAEB01E914B29005E7AE5 /* frequency_lists.json in Resources */ = {isa = PBXBuildFile; fileRef = CEECAEAF1E914B29005E7AE5 /* frequency_lists.json */; };
+		CEECAEB21E914B30005E7AE5 /* adjacency_graphs.json in Resources */ = {isa = PBXBuildFile; fileRef = CEECAEB11E914B30005E7AE5 /* adjacency_graphs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -773,6 +780,17 @@
 		BD6C366519484CF40089EB37 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BD6C366619484CF40089EB37 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = nl; path = nl.lproj/KPKLocalizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
 		BD6C366719484CF40089EB37 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CEECAE9C1E9132A3005E7AE5 /* DBMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBMatcher.h; path = "zxcvbn-ios/Zxcvbn/DBMatcher.h"; sourceTree = SOURCE_ROOT; };
+		CEECAE9D1E9132A3005E7AE5 /* DBMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBMatcher.m; path = "zxcvbn-ios/Zxcvbn/DBMatcher.m"; sourceTree = SOURCE_ROOT; };
+		CEECAEA01E9132A3005E7AE5 /* DBScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBScorer.h; path = "zxcvbn-ios/Zxcvbn/DBScorer.h"; sourceTree = SOURCE_ROOT; };
+		CEECAEA11E9132A3005E7AE5 /* DBScorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBScorer.m; path = "zxcvbn-ios/Zxcvbn/DBScorer.m"; sourceTree = SOURCE_ROOT; };
+		CEECAEA21E9132A3005E7AE5 /* DBZxcvbn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBZxcvbn.h; path = "zxcvbn-ios/Zxcvbn/DBZxcvbn.h"; sourceTree = SOURCE_ROOT; };
+		CEECAEA31E9132A3005E7AE5 /* DBZxcvbn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBZxcvbn.m; path = "zxcvbn-ios/Zxcvbn/DBZxcvbn.m"; sourceTree = SOURCE_ROOT; };
+		CEECAEA41E9132A3005E7AE5 /* generated */ = {isa = PBXFileReference; lastKnownFileType = folder; name = generated; path = "zxcvbn-ios/Zxcvbn/generated"; sourceTree = SOURCE_ROOT; };
+		CEECAEA51E9132A3005E7AE5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "zxcvbn-ios/Zxcvbn/Info.plist"; sourceTree = SOURCE_ROOT; };
+		CEECAEA61E9132A3005E7AE5 /* Zxcvbn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zxcvbn.h; path = "zxcvbn-ios/Zxcvbn/Zxcvbn.h"; sourceTree = SOURCE_ROOT; };
+		CEECAEAF1E914B29005E7AE5 /* frequency_lists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = frequency_lists.json; path = "zxcvbn-ios/Zxcvbn/generated/frequency_lists.json"; sourceTree = "<group>"; };
+		CEECAEB11E914B30005E7AE5 /* adjacency_graphs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = adjacency_graphs.json; path = "zxcvbn-ios/Zxcvbn/generated/adjacency_graphs.json"; sourceTree = "<group>"; };
 		FA638D0E1C39BFCB00B10CC6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/DatabaseSettingsWindow.strings; sourceTree = "<group>"; };
 		FA638D0F1C39BFCB00B10CC6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/PasswordEditWindow.strings; sourceTree = "<group>"; };
 		FA638D101C39BFCB00B10CC6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/WelcomeWindow.strings; sourceTree = "<group>"; };
@@ -1143,6 +1161,7 @@
 		4C77E35715B84A240093A587 = {
 			isa = PBXGroup;
 			children = (
+				CEECAEAD1E9132BF005E7AE5 /* Zxcvbn */,
 				4CC281881C0F675B00B9174D /* HNHUi.framework */,
 				4C7B63791C0CB55600D7038C /* KeePassKit.framework */,
 				4C7B637A1C0CB55600D7038C /* Sparkle.framework */,
@@ -1457,6 +1476,24 @@
 			path = MacPassPlugin;
 			sourceTree = SOURCE_ROOT;
 		};
+		CEECAEAD1E9132BF005E7AE5 /* Zxcvbn */ = {
+			isa = PBXGroup;
+			children = (
+				CEECAE9C1E9132A3005E7AE5 /* DBMatcher.h */,
+				CEECAE9D1E9132A3005E7AE5 /* DBMatcher.m */,
+				CEECAEA01E9132A3005E7AE5 /* DBScorer.h */,
+				CEECAEA11E9132A3005E7AE5 /* DBScorer.m */,
+				CEECAEA21E9132A3005E7AE5 /* DBZxcvbn.h */,
+				CEECAEA31E9132A3005E7AE5 /* DBZxcvbn.m */,
+				CEECAEAF1E914B29005E7AE5 /* frequency_lists.json */,
+				CEECAEB11E914B30005E7AE5 /* adjacency_graphs.json */,
+				CEECAEA41E9132A3005E7AE5 /* generated */,
+				CEECAEA51E9132A3005E7AE5 /* Info.plist */,
+				CEECAEA61E9132A3005E7AE5 /* Zxcvbn.h */,
+			);
+			name = Zxcvbn;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1569,6 +1606,7 @@
 				4CA0B2ED15BCADAC00654E32 /* SettingsWindow.xib in Resources */,
 				4C76155C1764C04C0015A1A6 /* GeneralSettings.xib in Resources */,
 				4CD884B715BD47080042BBF8 /* DocumentWindow.xib in Resources */,
+				CEECAEAC1E9132A3005E7AE5 /* Info.plist in Resources */,
 				4C17F109184E6B6C00E85625 /* 30_TerminalTemplate.pdf in Resources */,
 				4C7615681764C0C40015A1A6 /* PasswordInputView.xib in Resources */,
 				4C3826BA1AD04D8E007D7D67 /* 46_HelpTemplate.pdf in Resources */,
@@ -1586,6 +1624,7 @@
 				4C3826B91AD04D8E007D7D67 /* 45_CancelTemplate.pdf in Resources */,
 				4C2E381D16D11FF900037A9D /* 03_ServerTemplate.pdf in Resources */,
 				6021FE6C18E15E6D00C3BC51 /* UpdateSettings.xib in Resources */,
+				CEECAEAB1E9132A3005E7AE5 /* generated in Resources */,
 				4C3826B21AD04D8E007D7D67 /* 37_PercentageTemplate.pdf in Resources */,
 				4C3826C51AD04D8E007D7D67 /* 58_SecureAccountTemplate.pdf in Resources */,
 				4C3826A71AD04D8E007D7D67 /* 23_IconsTemplate.pdf in Resources */,
@@ -1639,10 +1678,12 @@
 				4C52A88E1788628B00868229 /* 06_BlockDeviceTemplate.pdf in Resources */,
 				4C52A88F1788628B00868229 /* 13_KeysTemplate.pdf in Resources */,
 				4C3826C61AD04D8E007D7D67 /* 59_DevelopmentTemplate.pdf in Resources */,
+				CEECAEB21E914B30005E7AE5 /* adjacency_graphs.json in Resources */,
 				4C52A8901788628B00868229 /* 18_DisplayTemplate.pdf in Resources */,
 				4C52A892178863B000868229 /* 68_PhoneTemplate.pdf in Resources */,
 				6021FE7718E15FF300C3BC51 /* DatePickingView.xib in Resources */,
 				4C3826A81AD04D8E007D7D67 /* 24_EstablishedConnectionTemplate.pdf in Resources */,
+				CEECAEB01E914B29005E7AE5 /* frequency_lists.json in Resources */,
 				6021FE4B18E13F1D00C3BC51 /* GroupInspectorView.xib in Resources */,
 				4C3826BF1AD04D8E007D7D67 /* 52_EncryptedTemplate.pdf in Resources */,
 				4C3826BD1AD04D8E007D7D67 /* 50_FolderTarTemplate.pdf in Resources */,
@@ -1707,6 +1748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEECAEA71E9132A3005E7AE5 /* DBMatcher.m in Sources */,
 				4CD034AC1BFE113B003C002C /* MPPluginManager.m in Sources */,
 				4C77E37315B84A240093A587 /* main.m in Sources */,
 				4CBA2ABA17074C07006D8139 /* MPSettingsHelper.m in Sources */,
@@ -1744,6 +1786,7 @@
 				4C46B88517063A070046109A /* NSString+MPPasswordCreation.m in Sources */,
 				4C5A11FE1708DE8700223D8A /* MPPasswordCreatorViewController.m in Sources */,
 				4CE5B54B173AFBA700207B39 /* MPDocument.m in Sources */,
+				CEECAEA91E9132A3005E7AE5 /* DBScorer.m in Sources */,
 				4C4A100F176286FD00BBF2CA /* MPTableView.m in Sources */,
 				4C8913661A422C8C0071A4CB /* MPFileWatcher.m in Sources */,
 				4CA334CA18AD60D1008A3322 /* MPWindowAssociationsTableViewDelegate.m in Sources */,
@@ -1789,6 +1832,7 @@
 				4CD2B9061849424B0051B395 /* MPAutotypeContext.m in Sources */,
 				4CFB18E418A17FA20097A34B /* MPUpdateSettingsController.m in Sources */,
 				4C7B63771C0CB51F00D7038C /* TTTStringTransformers.m in Sources */,
+				CEECAEAA1E9132A3005E7AE5 /* DBZxcvbn.m in Sources */,
 				4CCEDE2A179F203B008402BE /* MPOutlineView.m in Sources */,
 				4CCEDE2E179F213B008402BE /* MPNotifications.m in Sources */,
 				4C17D8E517A1C780006C8C1E /* MPDocumentWindowDelegate.m in Sources */,
