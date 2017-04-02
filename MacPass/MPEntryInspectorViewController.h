@@ -13,12 +13,14 @@
 @class HNHUIRoundedSecureTextField;
 @class MPDocument;
 
-@interface MPEntryInspectorViewController : MPViewController <NSPopoverDelegate, QLPreviewPanelDelegate>
+@interface MPEntryInspectorViewController : MPViewController <NSPopoverDelegate, QLPreviewPanelDelegate, NSTextFieldDelegate>
 
 @property (weak) IBOutlet NSTextField *titleTextField;
 @property (weak) IBOutlet NSTextField *usernameTextField;
 @property (weak) IBOutlet NSTextField *URLTextField;
 @property (weak) IBOutlet HNHUIRoundedSecureTextField *passwordTextField;
+@property (weak) IBOutlet NSLevelIndicator *entropyIndicator;
+@property (weak) IBOutlet NSTextField *entropyLabel;
 
 @property (weak) IBOutlet NSTextField *uuidTextField;
 

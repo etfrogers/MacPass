@@ -31,6 +31,8 @@
 
 #import "HNHUi/HNHUi.h"
 
+#import "Zxcvbn.h"
+
 typedef NS_ENUM(NSUInteger, MPEntryTab) {
   MPEntryTabGeneral,
   MPEntryTabFiles,
@@ -48,13 +50,16 @@ typedef NS_ENUM(NSUInteger, MPEntryTab) {
   MPAttachmentTableDataSource *_attachmentDataSource;
   MPWindowAssociationsTableViewDelegate *_windowAssociationsTableDelegate;
   MPWindowTitleComboBoxDelegate *_windowTitleMenuDelegate;
+  DBZxcvbn *_zxcvbn;
 }
 
 @property (nonatomic, assign) BOOL showPassword;
 @property (nonatomic, assign) MPEntryTab activeTab;
 @property (strong) NSPopover *activePopover;
 @property (nonatomic, readonly) KPKEntry *representedEntry;
-
+@property (readonly) DBResult *passwordScore;
+//@property (readonly) float entropyFloat;
+//@property (readonly) NSString *entropyString;
 
 //@property (nonatomic, weak) KPKEntry *entry;
 @property (strong) MPTemporaryFileStorage *quicklookStorage;
@@ -82,6 +87,7 @@ typedef NS_ENUM(NSUInteger, MPEntryTab) {
     _attachmentTableDelegate.viewController = self;
     _customFieldTableDelegate.viewController = self;
     _activeTab = MPEntryTabGeneral;
+    _zxcvbn = [[DBZxcvbn alloc] init];
   }
   return self;
 }
@@ -120,6 +126,8 @@ typedef NS_ENUM(NSUInteger, MPEntryTab) {
   self.windowTitleComboBox.delegate = _windowTitleMenuDelegate;
   
   [self.passwordTextField bind:NSStringFromSelector(@selector(showPassword)) toObject:self withKeyPath:NSStringFromSelector(@selector(showPassword)) options:nil];
+  self.passwordTextField.delegate = self;
+  
   [self.togglePassword bind:NSValueBinding toObject:self withKeyPath:NSStringFromSelector(@selector(showPassword)) options:nil];
   
   [self _setupViewBindings];
@@ -277,6 +285,18 @@ typedef NS_ENUM(NSUInteger, MPEntryTab) {
 }
 
 #pragma mark -
+#pragma mark TextFieldDelegate
+- (void)controlTextDidChange:(NSNotification *)notification {
+  [self refreshPasswordScore];
+}
+
+-(void)refreshPasswordScore {
+  _passwordScore = [_zxcvbn passwordStrength:self.passwordTextField.stringValue userInputs:nil];
+  self.entropyIndicator.floatValue = [_passwordScore.entropy floatValue];
+  self.entropyLabel.stringValue = [_passwordScore.entropy stringByAppendingString:@" bits"];
+  //self.entropyLabel.stringValue = _passwordScore.entropy;
+}
+#pragma mark -
 #pragma mark Popovers
 
 - (IBAction)showAutotypeBuilder:(id)sender {
@@ -385,8 +405,16 @@ typedef NS_ENUM(NSUInteger, MPEntryTab) {
               withKeyPath:[NSString stringWithFormat:@"%@.%@", NSStringFromSelector(@selector(representedObject)), NSStringFromSelector(@selector(url))]
                   options:@{ NSNullPlaceholderBindingOption: NSLocalizedString(@"NONE", "")}];
 
+  /*[self.entropyLabel bind:NSValueBinding
+                     toObject:self
+                  withKeyPath:NSStringFromSelector(@selector(entropyString))
+                      options:nil];
   
-  
+  [self.entropyIndicator bind:NSValueBinding
+                     toObject:self
+                  withKeyPath:NSStringFromSelector(@selector(entropyFloat))
+                      options:nil];
+ */
   [self.expiresCheckButton bind:NSTitleBinding
                        toObject:self
                     withKeyPath:[NSString stringWithFormat:@"%@.%@.%@", NSStringFromSelector(@selector(representedObject)), NSStringFromSelector(@selector(timeInfo)), NSStringFromSelector(@selector(expirationDate))]
